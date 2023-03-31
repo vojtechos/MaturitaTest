@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.maturitatest.HelloController">
+   <children>
+      <BarChart fx:id="barChart" layoutX="49.0" layoutY="45.0" prefHeight="400.0" prefWidth="724.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Button fx:id="SelectFileButton" layoutX="263.0" layoutY="620.0" mnemonicParsing="false" onMouseClicked="#onOpenFileClick" prefHeight="45.0" prefWidth="132.0" text="Select File" />
+      <Button fx:id="AnaliseButton" layoutX="431.0" layoutY="620.0" mnemonicParsing="false" onMouseClicked="#onAnaliseButtonClick" prefHeight="45.0" prefWidth="132.0" text="Analise" />
+   </children>
+</AnchorPane>
