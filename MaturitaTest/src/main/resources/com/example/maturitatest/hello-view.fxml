@@ -15,6 +15,7 @@
         </yAxis>
       </BarChart>
       <Button fx:id="SelectFileButton" layoutX="263.0" layoutY="620.0" mnemonicParsing="false" onMouseClicked="#onOpenFileClick" prefHeight="45.0" prefWidth="132.0" text="Select File" />
-      <Button fx:id="AnaliseButton" layoutX="431.0" layoutY="620.0" mnemonicParsing="false" onMouseClicked="#onAnaliseButtonClick" prefHeight="45.0" prefWidth="132.0" text="Analise" />
+      <Button fx:id="AnaliseButton" layoutX="431.0" layoutY="620.0" mnemonicParsing="false" onMouseClicked="#onAnaliseButtonClick" prefHeight="45.0" prefWidth="132.0" text="Analyze" />
+      <Label fx:id="thievs" alignment="TOP_LEFT" layoutX="92.0" layoutY="445.0" prefHeight="85.0" prefWidth="179.0" text="Thievs:" />
    </children>
 </AnchorPane>

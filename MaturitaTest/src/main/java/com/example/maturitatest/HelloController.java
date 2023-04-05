@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.chart.BarChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
@@ -14,6 +15,8 @@ import java.util.*;
 
 public class HelloController {
 
+    @FXML
+    public Label thievs;
     Scanner scanner = new Scanner(System.in);
     private File chosenFile;
     private String from;
@@ -35,6 +38,7 @@ public class HelloController {
         chosenFile = fileChooser.showOpenDialog(window);
         if (chosenFile != null) {
             System.out.println(chosenFile.getAbsolutePath());
+            System.out.println();
         }
     }
 
@@ -58,11 +62,13 @@ public class HelloController {
             value = Double.parseDouble(lineArr[3]);
             // Výpis csv souboru
             //System.out.println(from + " ; " +  to + " ; " + value);
+            //System.out.println();
             Transaction transaction = new Transaction(from, to, value);
             list.add(transaction);
         }
 
         System.out.println("Výpis souboru schován");
+        System.out.println();
 
         ArrayList<String> names = new ArrayList<String>();
         names.add("Buhuš Volný");
@@ -73,20 +79,19 @@ public class HelloController {
         names.add("Donald Tramp");
         names.add("Mohamed Horvat");
 
-        //TODO - upravit cyklus na vytvoření dvojic a checknutí
+        //TODO - Vypisuje některé dvojce jako nulové hodnoty idk proč
         for (int i = 0; i < names.size(); i++) {
             for (int j = i + 1; j < names.size(); j++) {
-                checkTransaction(list, names.get(i), names.get(j));
-                checkTransaction(list, names.get(j), names.get(i));
+                if (!names.get(i).equals(names.get(j))) {
+                    System.out.println("Pair: " + names.get(i) + ", " + names.get(j));
+                    checkTransaction(list, names.get(i), names.get(j));
+                    System.out.println("Pair: " + names.get(j) + ", " + names.get(i));
+                    checkTransaction(list, names.get(j), names.get(i));
+                }
             }
         }
-
-        //checkTransaction(list, "Buhuš Volný", "Adrian Babiš");
-        //checkTransaction(list, "Adrian Babiš", "Bohuš volný");
-        //lidl možnost vypsat 21 možností
-        //...
-
     }
+
     public void checkTransaction(List<Transaction> list, String from, String to){
 
         int amount = 0;
