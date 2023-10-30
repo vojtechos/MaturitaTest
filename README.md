@@ -1,2 +1,2 @@
-# MaturitaHovno
+# MaturitaTest
 Zkušební maturitní praktická zkouška
